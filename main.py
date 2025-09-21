@@ -28,7 +28,7 @@ header = {
 }
 
 for elements in data['exercises']:
-    to_spreadsheet = { # type: ignore
+    to_spreadsheet = { 
         "sheet1": {
             "date": datetime.today().strftime("%d/%m/%Y"),
             "time": datetime.today().strftime("%H:%M:%S"),
@@ -38,5 +38,5 @@ for elements in data['exercises']:
         }
     }
     
-    sheety_request = requests.post(url=url_sheety, json=to_spreadsheet, headers=header) # pyright: ignore[reportUnknownArgumentType]
+    sheety_request = requests.post(url=url_sheety, json=to_spreadsheet, headers=header) 
     sheety_request.raise_for_status()
